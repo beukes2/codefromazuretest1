@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "broker_reviews",
+  "info": {
+    "singularName": "broker-review",
+    "pluralName": "broker-reviews",
+    "displayName": "BrokerReview",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "ReviewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "OriginalPublishedDate": {
+      "type": "date"
+    },
+    "ModifiedDate": {
+      "type": "date"
+    },
+    "Author": {
+      "type": "string"
+    },
+    "CompanyInformation": {
+      "type": "text"
+    },
+    "FeaturesTable": {
+      "type": "richtext"
+    },
+    "KeypointOverview": {
+      "type": "richtext"
+    }
+  }
+}

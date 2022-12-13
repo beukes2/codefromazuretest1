@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brokers",
+  "info": {
+    "singularName": "broker",
+    "pluralName": "brokers",
+    "displayName": "Broker",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "websiteURL": {
+      "type": "string",
+      "required": true
+    },
+    "minDeposit": {
+      "type": "string",
+      "required": true
+    },
+    "supportsCrypto": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "totalTradingPairs": {
+      "type": "integer",
+      "required": true
+    },
+    "isIslamicAccount": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "tradingFees": {
+      "type": "enumeration",
+      "enum": [
+        "Low",
+        "High"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "reviewPost": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
+    },
+    "regulators": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::regulator.regulator",
+      "inversedBy": "brokers"
+    },
+    "rank": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "showOnRegulatorGrid": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "brokerRatingAverage": {
+      "type": "decimal"
+    }
+  }
+}

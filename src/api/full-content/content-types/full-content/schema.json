@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "full_contents",
+  "info": {
+    "singularName": "full-content",
+    "pluralName": "full-contents",
+    "displayName": "FullContent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    },
+    "broker_reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::broker-review.broker-review"
+    }
+  }
+}
